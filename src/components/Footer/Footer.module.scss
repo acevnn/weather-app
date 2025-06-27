@@ -1,0 +1,14 @@
+@use "sass:map";
+@use "../../styles/mixins" as mixins;
+
+.footer {
+  padding: 1rem;
+
+  @include mixins.media-query("md") {
+    padding: 1.5rem;
+  }
+
+  @include mixins.media-query("lg") {
+    padding: 2rem;
+  }
+}

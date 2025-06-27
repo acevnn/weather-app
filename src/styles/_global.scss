@@ -1,0 +1,15 @@
+@use "sass:map";
+@use "./mixins" as mixins;
+
+main {
+  padding: 1rem;
+
+  @include mixins.media-query("md") {
+    padding: 1.5rem;
+  }
+
+  @include mixins.media-query("lg") {
+    padding: 2rem;
+  }
+}
+
