@@ -1,11 +1,13 @@
-export default function WeatherInfo({ city, country }) {
+import classes from "./WeatherCity.module.scss";
+
+export default function WeatherCity({ city, country }) {
   return (
-    <>
-      <h1>
+    <section>
+      <h1 className={classes.heading}>
         {city}
         {","}
         {country}
       </h1>
-    </>
+    </section>
   );
 }

@@ -5,10 +5,16 @@
   &__wrapper {
     display: flex;
     align-items: center;
+    gap: 0.25rem;
   }
 
-  &__description {
-    margin: 0;
-    @include mixins.font(500, 16px, 0.8, 0);
+  &__description-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+  }
+
+  &__description + span {
+    font-weight: 700;
   }
 }

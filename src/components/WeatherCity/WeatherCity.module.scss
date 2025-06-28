@@ -1,0 +1,7 @@
+@use "sass:map";
+@use "../../styles/mixins" as mixins;
+
+.heading {
+  @include mixins.font(400, 32px, 0.8, 0);
+  color: var(--pico-h5-color);
+}

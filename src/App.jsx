@@ -1,9 +1,10 @@
 import { useState } from "react";
-import WeatherInfo from "./components/WeatherInfo/WeatherInfo.jsx";
+import WeatherCity from "@components/WeatherCity/WeatherCity.jsx";
 import { useWeather } from "./hooks/useWeather.js";
 import SearchBar from "./components/SearchBar/SearchBar.jsx";
-import WeatherIcon from "./components/WeatherIcon/WeatherIcon.jsx";
+import WeatherInfo from "@components/WeatherInfo/WeatherInfo.jsx";
 import Footer from "./components/Footer/Footer.jsx";
+import { RoundNumber } from "./utils/roundNumber.js";
 
 export function App() {
   const [inputValue, setInputValue] = useState("Skopje");
@@ -21,24 +22,26 @@ export function App() {
     }
   }
 
+  let roundedNumber = RoundNumber(weather?.current?.temp_c);
+  console.log(roundedNumber);
+
   console.log(inputValue);
-  console.log(weather?.current?.condition);
+  console.log(weather?.current?.temp_c);
 
   return (
     <>
       <main>
-        <section>
-          <WeatherInfo
-            city={weather?.location?.name}
-            country={weather?.location?.country}
-          />
-          <SearchBar onInputChange={getInputData} submitQuery={submitQuery} />
-          <WeatherIcon
-            iconUrl={weather?.current?.condition?.icon}
-            iconDescription={weather?.current?.condition?.text}
-            iconAltText={weather?.current?.condition?.text}
-          />
-        </section>
+        <WeatherCity
+          city={weather?.location?.name}
+          country={weather?.location?.country}
+        />
+        <SearchBar onInputChange={getInputData} submitQuery={submitQuery} />
+        <WeatherInfo
+          temp={roundedNumber}
+          iconUrl={weather?.current?.condition?.icon}
+          iconDescription={weather?.current?.condition?.text}
+          iconAltText={weather?.current?.condition?.text}
+        />
       </main>
       <Footer />
     </>
