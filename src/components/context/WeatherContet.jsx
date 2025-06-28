@@ -10,10 +10,12 @@ export const WeatherProvider = ({ children }) => {
   const [isCelsius, setIsCelsius] = useState(true);
 
   const weather = useWeather(query);
-
+  console.log(weather);
   const roundedTemp = isCelsius
     ? RoundNumber(weather?.current?.temp_c)
     : RoundNumber(weather?.current?.temp_f);
+
+  const iconDescription = weather?.current?.condition?.text;
 
   const value = {
     inputValue,
@@ -24,6 +26,7 @@ export const WeatherProvider = ({ children }) => {
     isCelsius,
     setIsCelsius,
     roundedTemp,
+    iconDescription,
   };
 
   return (
