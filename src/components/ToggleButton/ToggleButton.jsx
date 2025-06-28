@@ -1,25 +1,25 @@
 import classes from "./ToggleButton.module.scss";
-import { useState } from "react";
+import { useWeatherContext } from "@components/context/WeatherContet.jsx";
 
-export default function ToggleButton(props) {
-  const [isValue, setIsValue] = useState(false);
+export default function ToggleButton() {
+  const { isCelsius, setIsCelsius } = useWeatherContext();
 
   return (
     <>
       <label className={classes["toggle-button"]}>
         <input
           type="checkbox"
-          checked={isValue}
-          onChange={() => setIsValue((prev) => !prev)}
+          checked={!isCelsius}
+          onChange={() => setIsCelsius((prev) => !prev)}
         />
         <span
           className={`
     ${classes["toggle-button__slider"]}
     ${classes["toggle-button__round"]}
-    ${isValue ? classes["is-active"] : ""}
+    ${isCelsius ? classes["is-active"] : ""}
   `}
         >
-          {isValue ? "°C" : "°F"}
+          {isCelsius ? "°C" : "°F"}
         </span>
       </label>
     </>

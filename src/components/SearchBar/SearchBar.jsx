@@ -7,9 +7,11 @@ export default function SearchBar({ onInputChange, submitQuery }) {
         type="text"
         onChange={onInputChange}
         onKeyDown={(e) => e.key === "Enter" && submitQuery()}
-        placeholder="Enter city"
+        placeholder="Search city"
       />
-      <button onClick={submitQuery}>Search</button>
+      <button onClick={submitQuery} className={classes["search-bar__search"]}>
+        Review
+      </button>
     </section>
   );
 }

@@ -1,5 +1,6 @@
 import classes from "./WeatherInfo.module.scss";
 import ToggleButton from "@components/ToggleButton/ToggleButton.jsx";
+import { useWeatherContext } from "@components/context/WeatherContet.jsx";
 
 export default function WeatherInfo({
   iconUrl,
@@ -7,6 +8,8 @@ export default function WeatherInfo({
   iconDescription,
   temp,
 }) {
+  const { roundedTemp } = useWeatherContext();
+  console.log(roundedTemp);
   if (!iconUrl) return null;
 
   console.log(temp);
@@ -24,7 +27,7 @@ export default function WeatherInfo({
             <p className={classes["weather-info__description"]}>
               {iconDescription}
             </p>
-            <span>{temp} °C</span>
+            <span>{roundedTemp} °C</span>
           </div>
         </div>
         <ToggleButton isTempVal={handleTempValue} />

@@ -27,8 +27,19 @@ main {
   height: 88vh;
   padding: 2rem;
 
+  @include mixins.media-query('md') {
+    border-radius: 4px;
+    margin-top: 48px;
+    box-shadow: 1px 6px 51px -11px rgba(217, 205, 205, 0.29);
+    -webkit-box-shadow: 1px 6px 51px -11px rgba(217, 205, 205, 0.29);
+    -moz-box-shadow: 1px 6px 51px -11px rgba(217, 205, 205, 0.29);
+  }
+
+
   @include mixins.media-query("md") {
     height: 75vh;
+    border-radius: 12px;
+    margin-top: 48px;
   }
 }
 
