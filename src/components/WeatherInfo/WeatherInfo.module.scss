@@ -1,11 +1,16 @@
 @use "sass:map";
 @use "../../styles/mixins" as mixins;
 
-.weather-icon {
+.weather-info {
   &__wrapper {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     gap: 0.25rem;
+  }
+
+  &__container {
+    display: flex;
   }
 
   &__description-wrapper {
