@@ -9,6 +9,7 @@ import { RoundNumber } from "./utils/roundNumber.js";
 export function App() {
   const [inputValue, setInputValue] = useState("Skopje");
   const [query, setQuery] = useState("Skopje");
+  const [isActive, setIsActive] = useState(false);
 
   const weather = useWeather(query);
 
@@ -23,11 +24,9 @@ export function App() {
   }
 
   let roundedNumber = RoundNumber(weather?.current?.temp_c);
-  console.log(roundedNumber);
+  // let temp = weather?.current?
 
-  console.log(inputValue);
-  console.log(weather?.current?.temp_c);
-
+  console.log(weather);
   return (
     <>
       <main>

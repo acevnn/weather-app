@@ -23,6 +23,7 @@ body {
 }
 
 main {
+  position: relative;
   height: 88vh;
   padding: 2rem;
 
@@ -38,5 +39,10 @@ p, input, h1, h2, h3, h4, h5, h6 {
 
 input:not([type=checkbox], [type=radio]) {
   margin: 0;
+}
+
+label:has([type=checkbox],[type=radio]) {
+  width: 60px;
+  cursor: pointer;
 }
 
