@@ -5,7 +5,7 @@ export default function WeatherCity({ city, country }) {
     <section>
       <h1 className={classes.heading}>
         {city}
-        {","}
+        {", "}
         {country}
       </h1>
     </section>
