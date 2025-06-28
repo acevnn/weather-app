@@ -1,0 +1,14 @@
+@use "sass:map";
+@use "../../styles/mixins" as mixins;
+
+.weather-icon {
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__description {
+    margin: 0;
+    @include mixins.font(500, 16px, 0.8, 0);
+  }
+}
