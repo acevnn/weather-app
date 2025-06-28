@@ -2,7 +2,11 @@
 @use "../../styles/mixins" as mixins;
 
 .footer {
-  padding: 1rem;
+  padding-inline: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 
   @include mixins.media-query("md") {
     padding: 1.5rem;
@@ -10,5 +14,18 @@
 
   @include mixins.media-query("lg") {
     padding: 2rem;
+  }
+
+  &__link-wrapper {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    justify-content: space-between;
+
+    a {
+      img {
+        height: 40px;
+      }
+    }
   }
 }

@@ -1,15 +1,42 @@
 @use "sass:map";
 @use "./mixins" as mixins;
 
+:root {
+  font-family: 'Raleway', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0 auto;
+  @include mixins.media-query("md") {
+    max-width: 768px;
+  }
+  @include mixins.media-query("lg") {
+    max-width: 1024px;
+  }
+}
+
 main {
-  padding: 1rem;
+  height: 88vh;
+  padding: 2rem;
 
   @include mixins.media-query("md") {
-    padding: 1.5rem;
+    height: 75vh;
   }
+}
 
-  @include mixins.media-query("lg") {
-    padding: 2rem;
-  }
+p, input, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+input:not([type=checkbox], [type=radio]) {
+  margin: 0;
 }
 
