@@ -6,7 +6,7 @@ export function useWeather(query) {
   useEffect(() => {
     if (!query) return;
     const key = "e9ddf2073a9f49ab98a91154252506";
-    const url = `https://api.weatherapi.com/v1/current.json?key=${key}&q=${query}&aqi=no`;
+    const url = `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${query}&days=3&aqi=yes&alerts=yes`;
 
     async function fetchWeatherData() {
       try {

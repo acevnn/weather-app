@@ -24,7 +24,7 @@ body {
 
 main {
   position: relative;
-  height: 88vh;
+  min-height: 100vh;
   padding: 2rem;
 
   @include mixins.media-query('md') {
@@ -46,6 +46,15 @@ main {
 p, input, h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
+}
+
+ul, li {
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  list-style-type: none;
 }
 
 input:not([type=checkbox], [type=radio]) {
