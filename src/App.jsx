@@ -3,6 +3,7 @@ import SearchBar from "./components/SearchBar/SearchBar.jsx";
 import WeatherInfo from "@components/WeatherInfo/WeatherInfo.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import { useWeatherContext } from "@components/context/WeatherContet.jsx";
+import ForecastWeather from "@components/ForecastWeather/ForecastWeather.jsx";
 
 export function App() {
   const { weather, inputValue, setInputValue, setQuery } = useWeatherContext();
@@ -26,6 +27,7 @@ export function App() {
         />
         <SearchBar onInputChange={getInputData} submitQuery={submitQuery} />
         <WeatherInfo iconUrl={weather?.current?.condition?.icon} />
+        <ForecastWeather />
       </main>
       <Footer />
     </>
