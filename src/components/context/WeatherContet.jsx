@@ -14,7 +14,7 @@ export const WeatherProvider = ({ children }) => {
     ? RoundNumber(weather?.current?.temp_c)
     : RoundNumber(weather?.current?.temp_f);
 
-  const tempUnit = isCelsius ? "°C" : "°F";
+  const tempUnit = isCelsius ? "°" : "°F";
 
   const iconDescription = weather?.current?.condition?.text;
 

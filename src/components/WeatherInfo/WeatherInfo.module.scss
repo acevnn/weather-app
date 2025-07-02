@@ -7,6 +7,10 @@
     justify-content: center;
     align-items: center;
     gap: 0.25rem;
+
+    img {
+      width: 40px;
+    }
   }
 
   &__container {
@@ -15,10 +19,6 @@
     flex-direction: column;
     text-align: center;
     gap: 1rem;
-
-    img {
-      width: 32px;
-    }
   }
 
   &__description-wrapper {
@@ -28,7 +28,7 @@
   }
 
   &__temperature {
-    @include mixins.font(700, 32px, 2.1px, 0);
+    @include mixins.font(700, 42px, 2.1px, 0);
     margin-bottom: 0.5rem;
   }
 }

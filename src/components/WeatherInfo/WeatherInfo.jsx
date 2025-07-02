@@ -6,23 +6,22 @@ export default function WeatherInfo({ iconUrl }) {
   if (!iconUrl) return null;
   const { iconDescription, tempUnit, tempNumber } = useWeatherContext();
 
-  console.log(tempNumber);
-
+  console.log(tempUnit, tempNumber);
   return (
     <>
       <section className={classes["weather-info__wrapper"]}>
         <div className={classes["weather-info__container"]}>
-          <img src={iconUrl} alt={iconDescription || "Weather Icon"} />
-          <span className={classes["weather-info__temperature"]}>
-            <span>{tempNumber}</span>
-            <span>{tempUnit}</span>
-          </span>
           <div className={classes["weather-info__description-wrapper"]}>
+            <span className={classes["weather-info__temperature"]}>
+              <span>{tempNumber}</span>
+              <span>{tempUnit}</span>
+            </span>
             <p className={classes["weather-info__description"]}>
               {iconDescription}
             </p>
           </div>
         </div>
+        <img src={iconUrl} alt={iconDescription || "Weather Icon"} />
         <ToggleButton />
       </section>
     </>
