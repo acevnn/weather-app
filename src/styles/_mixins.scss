@@ -1,7 +1,7 @@
 @use 'variables' as *;
 @use "sass:map";
 
-@mixin font($weight: 600, $font-size: 1rem, $line-height: 1.2, $letter-spacing: 0, $font-family: ('Raleway', sans-serif)) {
+@mixin font($weight: 600, $font-size: 1rem, $line-height: 1.2, $letter-spacing: 0, $font-family: ('Poppins', sans-serif)) {
   font-weight: $weight;
   font-size: $font-size;
   line-height: $line-height;
