@@ -1,10 +1,39 @@
+@use '../../styles/mixins' as mixins;
+
 .search-bar {
   display: flex;
   gap: 0.5rem;
   align-items: center;
+  justify-content: center;
   margin-bottom: 48px;
 
-  &__search {
+  &__search-wrapper {
+    position: relative;
+    width: 100%;
+
+    svg {
+      position: absolute;
+      left: 20px;
+      bottom: 11px;
+    }
+  }
+
+
+  &__search-input {
+    border-radius: 25px;
+    @include mixins.font(400, 16px, 36px, 0);
+
+    //&::placeholder {
+    //  color: red;
+    //}
+
+  }
+
+  &__submit {
     color: #fff;
   }
+}
+
+input:not([type=checkbox],[type=radio],[type=range],[type=file]) {
+  padding-left: 48px;
 }

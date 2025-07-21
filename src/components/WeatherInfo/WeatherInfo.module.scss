@@ -7,16 +7,18 @@
     justify-content: center;
     align-items: center;
     gap: 0.25rem;
+    flex-direction: column;
+    margin: 0;
 
     img {
-      width: 40px;
+      width: 64px;
     }
   }
 
   &__container {
     display: flex;
     align-items: center;
-    flex-direction: column;
+    //flex-direction: column;
     text-align: center;
     gap: 1rem;
   }
@@ -28,7 +30,8 @@
   }
 
   &__temperature {
-    @include mixins.font(700, 42px, 2.1px, 0);
-    margin-bottom: 0.5rem;
+    @include mixins.font(700, 96px, 1, 0);
+    gap: 0.125rem;
+    display: flex;
   }
 }
