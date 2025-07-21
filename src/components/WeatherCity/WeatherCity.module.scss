@@ -1,8 +1,21 @@
 @use "sass:map";
 @use "../../styles/mixins" as mixins;
 
-.heading {
-  margin-bottom: 2rem;
-  @include mixins.font(400, 32px, 0.8, 0);
-  color: var(--pico-h5-color);
+.weather-city {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--pico-h5-color);
+  padding-block: 1.5rem;
+  margin-bottom: 3rem;
+
+  h1 {
+    @include mixins.font(200, 24px, 1.2, 0);
+    color: var(--pico-h5-color);
+  }
+
+  span {
+    @include mixins.font(200, 24px, 1.2, 0);
+    color: var(--pico-h5-color);
+  }
 }

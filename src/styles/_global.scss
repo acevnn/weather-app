@@ -25,7 +25,7 @@ body {
 main {
   position: relative;
   min-height: 100vh;
-  padding: 2rem;
+  padding: 2.25rem 50px;
 
   @include mixins.media-query('md') {
     border-radius: 4px;

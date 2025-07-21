@@ -3,10 +3,11 @@ import SearchBar from "./components/SearchBar/SearchBar.jsx";
 import WeatherInfo from "@components/WeatherInfo/WeatherInfo.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import { useWeatherContext } from "@components/context/WeatherContet.jsx";
-import ForecastWeather from "@components/ForecastWeather/ForecastWeather.jsx";
 
 export function App() {
   const { weather, inputValue, setInputValue, setQuery } = useWeatherContext();
+
+  console.log(weather);
 
   function getInputData(event) {
     setInputValue(event.target.value);
@@ -21,14 +22,12 @@ export function App() {
   return (
     <>
       <main>
-        <WeatherCity
-          city={weather?.location?.name}
-          country={weather?.location?.country}
-        />
         <SearchBar onInputChange={getInputData} submitQuery={submitQuery} />
         <WeatherInfo iconUrl={weather?.current?.condition?.icon} />
-        <ForecastWeather />
+        {/*<ForecastWeather />*/}
+        <WeatherCity city={weather?.location?.name} />
       </main>
+
       <Footer />
     </>
   );
